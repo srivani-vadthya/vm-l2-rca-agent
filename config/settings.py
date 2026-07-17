@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     PORT: int
 
     GROQ_API_KEY: str
+    DB_FIX_AGENT_URL: str
 
     class Config:
         env_file = ".env"
