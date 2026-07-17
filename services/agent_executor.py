@@ -43,6 +43,6 @@ class AgentExecutor:
 
             )
 
-            return response.json()
+            return response.json() if response.text else {"status_code": response.status_code}
 
         raise Exception("Unknown Agent")
