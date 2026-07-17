@@ -1,11 +1,12 @@
 import time
 import uuid
-
+from services.agent_executor import AgentExecutor
 from models.request import IncidentRequest
 from utils.logger import log
 from services.context_builder import ContextBuilder
 from services.diagnosis_service import DiagnosisService
 from services.report_service import ReportService
+
 
 
 class L2RCAAgent:
@@ -14,6 +15,8 @@ class L2RCAAgent:
         self.context_builder = ContextBuilder()
         self.diagnosis_service = DiagnosisService()
         self.report_service = ReportService()
+        self.agent_executor = AgentExecutor()
+        
 
     def analyze(self, incident: IncidentRequest):
 
