@@ -1,5 +1,10 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
+
+
+class AlternativeDiagnosis(BaseModel):
+    agent: str
+    confidence: float
 
 
 class Diagnosis(BaseModel):
@@ -13,3 +18,7 @@ class Diagnosis(BaseModel):
     reason: str
 
     recommended_checks: List[str]
+
+    evidence: List[str] = []
+
+    alternative_agents: List[AlternativeDiagnosis] = []
